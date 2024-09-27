@@ -2,3 +2,4 @@ opencv-python
 mediapipe
 comtypes
 pycaw
+numpy

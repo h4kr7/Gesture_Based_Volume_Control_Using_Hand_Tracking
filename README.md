@@ -1,11 +1,14 @@
-# Hand Gesture Volume Control
+# Gesture-Based Volume Control Using Hand Tracking
 
-This project allows you to control your system's volume using hand gestures. 
-By utilizing computer vision and machine learning techniques, 
-it detects hand movements and adjusts the audio volume accordingly. 
-The application uses OpenCV and MediaPipe for hand tracking and Pycaw to manage audio settings.
+This project allows users to control the volume of their system using hand gestures. The project utilizes OpenCV, MediaPipe, and Pycaw libraries to track hand movements and adjust the system's audio volume based on the distance between the thumb and index finger.
+
 
 ## Requirements
-```bash
-pip install -r requirements.txt
-```
+
+1. Make sure you have Python 3.10 installed.
+
+2. After ensuring that Python is installed, you can install the necessary libraries using the following command:
+
+   ```bash
+   pip install -r requirements.txt
+   ```

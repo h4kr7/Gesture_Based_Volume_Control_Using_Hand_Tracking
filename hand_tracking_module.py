@@ -1,9 +1,6 @@
-# pip install opencv-python
 import cv2
-
-# pip install mediapipe
 import mediapipe as mp
-import time  # to check framerate
+import time
 
 
 class handDetector:
@@ -16,8 +13,8 @@ class handDetector:
         self.detectionCon = detectionCon
         self.trackCon = trackCon
 
-        # Initialise Hand
-        self.mpHands = mp.solutions.hands
+        # Initialise Hand tracking module
+        self.mpHands = mp.solutions.hands  # Access the hand module
         self.hands = self.mpHands.Hands(
             self.mode,
             self.maxHands,
@@ -25,11 +22,11 @@ class handDetector:
             self.detectionCon,
             self.trackCon,
         )
-        self.mpDraw = mp.solutions.drawing_utils
+        self.mpDraw = mp.solutions.drawing_utils  # drawing landmarks
 
     def findHands(self, img, draw=True):
-        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # convert color
-        self.result = self.hands.process(imgRGB)  # converted color result
+        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # convert to RGB
+        self.result = self.hands.process(imgRGB)
 
         # Draw dots in hands
         if self.result.multi_hand_landmarks:
@@ -42,7 +39,7 @@ class handDetector:
         return img
 
     def findPosition(self, img, handNo=0, draw=True):
-        lmList = []
+        lmList = []  # list of landmarks
         if self.result.multi_hand_landmarks:
             myHand = self.result.multi_hand_landmarks[handNo]
             for id, lm in enumerate(myHand.landmark):
@@ -86,7 +83,7 @@ def main():
         )
 
         cv2.imshow("Hand Tracking", img)
-        cv2.waitKey(1)  # waiting time 1 milisecond
+        cv2.waitKey(1)  # wait for 1 milisecond
 
 
 if __name__ == "__main__":

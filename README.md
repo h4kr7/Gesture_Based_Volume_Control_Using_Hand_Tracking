@@ -13,4 +13,4 @@ This project allows users to control the volume of their system using hand gestu
    pip install -r requirements.txt
    ```
 ## DEMO
-![Demo](https://github.com/h4kr7/Gesture_Based_Volume_Control_Using_Hand_Tracking/blob/main/gif/1.png)
+![Demo](https://github.com/h4kr7/Gesture_Based_Volume_Control_Using_Hand_Tracking/blob/main/gif/1.gif)
